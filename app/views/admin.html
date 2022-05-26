@@ -1,0 +1,46 @@
+#{extends 'main.html' /}
+#{set title:'Dashboard' /}
+
+#{menu id:"admin"/}
+
+<section class="ui segment">
+    <h2 class="ui header">
+        All Known Readings in the Database:
+    </h2>
+    <table class="ui fixed table">
+        <thead>
+        <tr>
+            <th>ID </th>
+            <th>Code</th>
+            <th>Temp</th>
+            <th>Windspeed</th>
+            <th>Pressure</th>
+            <th>Weather</th>
+        </tr>
+        </thead>
+        <tbody>
+        #{list items:readings, as:'reading'}
+        <tr>
+            <td>
+                ${reading.id}
+            </td>
+            <td>
+                ${reading.code}
+            </td>
+            <td>
+                ${reading.temp}
+            </td>
+            <td>
+                ${reading.windspeed}
+            </td>
+            <td>
+                ${reading.pressure}
+            </td>
+            <td>
+                ${reading.weather}
+            </td>
+        </tr>
+        #{/list}
+        </tbody>
+    </table>
+</section>

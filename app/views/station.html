@@ -1,0 +1,78 @@
+#{extends 'main.html' /}
+#{set title:'Station' /}
+
+#{menu id:"dashboard"/}
+
+
+<section class="ui segment">
+  <h2 class="ui header">
+
+  </h2>
+  <div class="ui five cards">
+
+    <div class="card">
+      <div class="content">
+        <div class="header">Tramore  <i class="purple big marker icon"></i></div>
+
+        <div class="description">
+
+
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+
+        <div class="header">Weather  <i class="blue  big cloud sun icon"></i></div>
+
+        <div class="description">
+
+          ${weatherCodeMap.get(currentReading.code)}
+        </div>
+
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+
+        <div class="header">Temperature <i class="green big temperature high icon"></i></div>
+
+        <div class="description">
+
+           ${currentReading.temp} C <br>
+           ${tempF} F
+
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <div class="header">Wind <i class="yellow big wind icon"></i></div>
+
+        <div class="description">
+           ${currentReading.windspeed}
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <div class="header">Pressure  <i class="red big atom icon" ></i>  </div>
+
+        <div class="description">
+           ${currentReading.pressure}hpa
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  #{listreading station:station /}
+  #{addreading station:station /}
+
+
+</section>
